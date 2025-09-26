@@ -69,7 +69,7 @@ export default function RealScenario() {
                 </p>
 
                 {/* kleine „eingehende Anrufe“-Bubbles */}
-                <div className="mt-4 flex gap-2">
+             {/*    <div className="mt-4 flex gap-2">
                   {[0, 1, 2].map((i) => (
                     <motion.div
                       key={i}
@@ -78,10 +78,10 @@ export default function RealScenario() {
                       transition={{ delay: 0.2 + i * 0.15 }}
                       className="rounded-lg bg-red-500/15 border border-red-400/30 px-3 py-1 text-xs"
                     >
-                      Eingehender Anruf #{i + 1}
+                     Eingehender Anruf #{i + 1}
                     </motion.div>
                   ))}
-                </div>
+                </div>*/}
               </div>
             </motion.div>
           ) : (
@@ -116,7 +116,7 @@ export default function RealScenario() {
                 </p>
 
                 {/* Nachricht-Karte */}
-                <motion.div
+               {/* <motion.div
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.35 }}
@@ -131,11 +131,11 @@ export default function RealScenario() {
                     2 × Getränke<br />
                     Abholung: <span className="text-white/90">19:30</span>
                   </div>
-                </motion.div>
+                </motion.div>*/}
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence>  
       </div>
 
       <div className="mt-4 text-center">
