@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { PhoneCall, Bot, Store } from "lucide-react";
+import { cubicBezier } from "framer-motion";
 
 type Props = {
   // optional: eigene Bilder nutzen (liegen z.B. unter /public/steps/*)
@@ -14,8 +15,12 @@ type Props = {
 
 const float = {
   animate: {
-    y: [0, -6, 0],
-    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
+    y: [0, -10, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: cubicBezier(0.4, 0, 0.2, 1), // Use cubicBezier helper
+    },
   },
 };
 
@@ -184,11 +189,18 @@ export default function CallWorkflow({
                 />
               ) : (
                 <motion.div
-                  animate={float.animate}
-                  className="grid h-[120px] w-[120px] place-items-center rounded-3xl bg-gradient-to-br from-emerald-400/25 to-sky-500/25 ring-1 ring-white/10"
-                >
-                  <Bot className="h-10 w-10 text-white" />
-                </motion.div>
+  animate={{
+    y: [0, -10, 0],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: [0.4, 0, 0.2, 1], // Use cubic bezier array for ease
+    },
+  }}
+  className="grid h-[120px] w-[120px] place-items-center rounded-3xl bg-gradient-to-br from-emerald-400/25 to-sky-500/25 ring-1 ring-white/10"
+>
+  <Bot className="h-10 w-10 text-white" />
+</motion.div>
               )}
             </div>
           </div>
