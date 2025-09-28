@@ -19,21 +19,17 @@ const float = {
   },
 };
 
-// Pfad-Zeichnen Animation
 const draw = {
   hidden: { pathLength: 0, opacity: 0 },
-  show: (i = 0) => ({
+  show: {
     pathLength: 1,
     opacity: 1,
     transition: {
-      duration: 1.1,
-      delay: 0.25 + i * 0.2,
-      ease: [0.42, 0, 0.58, 1], // cubic-bezier for easeInOut
+      duration: 2,
+      ease: [0.42, 0, 0.58, 1] as any, // 👈 Fix: Type-Cast
     },
-  }),
-};
-
-
+  },
+}
 
 
 export default function CallWorkflow({
