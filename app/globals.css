@@ -112,11 +112,20 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* nach den Tailwind-Direktiven! */
+@layer utilities {
+  .bg-neutral-950 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(35 10 40 / var(--tw-bg-opacity)) !important; /* dunkles Violett */
   }
 }

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Phone, Sparkles, ShieldCheck, Clock, MessageSquare, Euro, ChevronRight, Bot, Headset, Database, Languages, Settings, CheckCircle2, ChevronDown, Star, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import ScenarioAnimation from "../components/ScenarioAnimation";
+import CallWorkflow from "@/components/CallWorkflow";
 
 // Helper animation variants
 const fadeUp = {
@@ -25,7 +25,7 @@ export default function ConversaAI() {
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
         <div className="absolute -top-56 left-1/2 h-[40rem] w-[40rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-600/30 via-fuchsia-500/20 to-cyan-400/20 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] translate-x-1/4 translate-y-1/4 rounded-full bg-gradient-to-tr from-cyan-400/20 via-emerald-400/10 to-indigo-600/20 blur-3xl" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.12),rgba(0,0,0,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsla(161, 81%, 64%, 0.12),hsla(0, 17%, 87%, 0.87))]" />
       </div>
 
       {/* Nav */}
@@ -85,6 +85,7 @@ export default function ConversaAI() {
             </div>
           </motion.div>
 
+
           {/* Hero Card */}
           <motion.div variants={fadeUp} className="lg:col-span-5">
             <Card className="border-white/10 bg-gradient-to-b from-white/10 to-white/5">
@@ -110,11 +111,7 @@ export default function ConversaAI() {
           </motion.div>
         </motion.div>
       </section>
-{/* Scenario Animation */}
-<section id="scenario" className="mx-auto max-w-7xl px-6">
-  <ScenarioAnimation />
-</section>
-      {/* Logos / social proof */}
+ 
       <section className="mx-auto max-w-7xl px-6 pb-8">
         <div className="grid grid-cols-2 gap-6 opacity-70 sm:grid-cols-3 md:grid-cols-6">
           {["Dolunay Döner", "Ristorante Luna", "Sushi Mono", "Kebab Haus", "Pizzeria 24", "Burger Bros"].map((brand) => (
@@ -123,7 +120,23 @@ export default function ConversaAI() {
         </div>
       </section>
 
-      {/* Features */}
+<section id="features" className="relative py-16">
+    <div className="bg-white/5 ring-1 ring-white/10 backdrop-blur-md shadow-[0_10px_50px_-12px_rgba(0,0,0,0.45)] p-6 md:p-10">
+{/* … dein bisheriger Inhalt … */}
+      <CallWorkflow
+        // optional, wenn du eigene PNGs hast:
+        // customerImg="/steps/customer.png"
+        // aiImg="/steps/ai-bot.png"
+        // storeImg="/steps/store.png"
+      />
+      {/* Logos / social proof */}
+      {/* Features */}    </div>
+ 
+</section>
+      
+
+
+
       <section id="features" className="mx-auto max-w-7xl px-6 py-16">
         <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
           <motion.h2 variants={fadeUp} className="mb-3 text-3xl font-semibold tracking-tight md:text-4xl">Funktionen, die begeistern</motion.h2>
@@ -150,27 +163,44 @@ export default function ConversaAI() {
         </motion.div>
       </section>
 
-      {/* How it works */}
-      <section id="how" className="mx-auto max-w-7xl px-6 py-16">
-        <div className="mb-10">
-          <h2 className="mb-3 text-3xl font-semibold tracking-tight md:text-4xl">So funktioniert's</h2>
-          <p className="max-w-2xl text-white/80">In wenigen Schritten startklar – wir kümmern uns um den Rest.</p>
+<section id="how" className="w-full py-16 bg-[#29274a] relative shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+  <div className="mx-auto max-w-7xl px-6 relative z-10">
+    <div className="mb-10">
+      <h2 className="mb-3 text-3xl font-semibold tracking-tight md:text-4xl text-white">
+        So funktioniert's
+      </h2>
+      <p className="max-w-2xl text-white/80">
+        In wenigen Schritten startklar – wir kümmern uns um den Rest.
+      </p>
+    </div>
+
+    <div className="grid gap-6 md:grid-cols-3">
+      {[
+        { step: 1, title: "Onboarding", desc: "Wir richten ConversaAI für deinen Betrieb ein: Öffnungszeiten, Menü, Liefergebiete." },
+        { step: 2, title: "Training", desc: "Anpassung an häufige Fragen & Prozesse: Reservierung, Bestellung, Abholung, Lieferung." },
+        { step: 3, title: "Live gehen", desc: "ConversaAI übernimmt Anrufe – du bekommst alle Infos direkt als Nachricht." },
+      ].map((s) => (
+        <div
+          key={s.step}
+          className="relative rounded-2xl border border-white/10 bg-white/5 p-6 
+                     shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-black/30 
+                     hover:-translate-y-1 transition-all duration-300"
+        >
+          <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full 
+                          bg-gradient-to-br from-indigo-600 to-fuchsia-500 font-semibold text-white shadow-md">
+            {s.step}
+          </div>
+          <h3 className="mb-2 text-lg font-semibold text-white">{s.title}</h3>
+          <p className="text-white/70">{s.desc}</p>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { step: 1, title: "Onboarding", desc: "Wir richten ConversaAI für deinen Betrieb ein: Öffnungszeiten, Menü, Liefergebiete." },
-            { step: 2, title: "Training", desc: "Anpassung an häufige Fragen & Prozesse: Reservierung, Bestellung, Abholung, Lieferung." },
-            { step: 3, title: "Live gehen", desc: "ConversaAI übernimmt Anrufe – du bekommst alle Infos direkt als Nachricht." },
-          ].map((s) => (
-            <div key={s.step} className="relative rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="mb-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-fuchsia-500 font-semibold">{s.step}</div>
-              <h3 className="mb-2 text-lg font-semibold">{s.title}</h3>
-              <p className="text-white/70">{s.desc}</p>
-              <div className="pointer-events-none absolute -right-3 top-10 hidden h-6 w-6 rotate-45 bg-white/10 md:block" />
-            </div>
-          ))}
-        </div>
-      </section>
+      ))}
+    </div>
+  </div>
+
+  {/* Optional Glow Effekt im Hintergrund */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-fuchsia-500/10 blur-3xl"></div>
+</section>
+
 
       {/* Pricing */}
       <section id="pricing" className="mx-auto max-w-7xl px-6 py-16">
@@ -205,7 +235,8 @@ export default function ConversaAI() {
                   </li>
                 ))}
               </ul>
-              <Button className="w-full bg-indigo-600 hover:bg-indigo-500">Kostenlose Demo anfragen</Button>
+              
+             /* <Button className="w-full bg-indigo-600 hover:bg-indigo-500">Kostenlose Demo anfragen</Button>*/
               <p className="mt-3 text-xs text-white/60">*Fair‑Use Policy kann gelten.</p>
             </CardContent>
           </Card>
@@ -226,30 +257,48 @@ export default function ConversaAI() {
           </Card>
         </div>
       </section>
+      
+{/* Testimonials */}
+<section className="w-full py-16 bg-[#29274a] relative shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+  <div className="mx-auto max-w-7xl px-6 relative z-10">
+    <div className="mb-10 text-center">
+      <h2 className="mb-3 text-3xl font-semibold tracking-tight md:text-4xl text-white">
+        Was unsere Kunden sagen
+      </h2>
+      <p className="text-white/80">
+        Echte Stimmen aus der Gastronomie.
+      </p>
+    </div>
+    <div className="grid gap-6 md:grid-cols-3">
+      {[
+        { name: "Ayla K.", role: "Inhaberin – Kebab Haus", text: "Seit ConversaAI gehen keine Anrufe mehr verloren. Unsere Abläufe sind entspannter und wir haben mehr Bestellungen." },
+        { name: "Marco L.", role: "Manager – Ristorante Luna", text: "Reservierungen laufen jetzt automatisch. Das Team hat Zeit für die Gäste vor Ort." },
+        { name: "Jin S.", role: "Owner – Sushi Mono", text: "Super schnelle Einrichtung und top Support. Die Transkripte sind extrem hilfreich." },
+      ].map((t, i) => (
+        <div
+          key={i}
+          className="rounded-2xl border border-white/10 bg-white/5/50 p-6 backdrop-blur-sm
+                     shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-black/40 transition-shadow duration-300"
+        >
+          <div className="mb-3 flex items-center gap-2 text-amber-400">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="h-4 w-4 fill-current" />
+            ))}
+          </div>
+          <p className="mb-4 text-white/80">“{t.text}”</p>
+          <p className="text-sm font-medium">{t.name}</p>
+          <p className="text-xs text-white/60">{t.role}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 
-      {/* Testimonials */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="mb-10 text-center">
-          <h2 className="mb-3 text-3xl font-semibold tracking-tight md:text-4xl">Was unsere Kunden sagen</h2>
-          <p className="text-white/80">Echte Stimmen aus der Gastronomie.</p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {[
-            { name: "Ayla K.", role: "Inhaberin – Kebab Haus", text: "Seit ConversaAI gehen keine Anrufe mehr verloren. Unsere Abläufe sind entspannter und wir haben mehr Bestellungen." },
-            { name: "Marco L.", role: "Manager – Ristorante Luna", text: "Reservierungen laufen jetzt automatisch. Das Team hat Zeit für die Gäste vor Ort." },
-            { name: "Jin S.", role: "Owner – Sushi Mono", text: "Super schnelle Einrichtung und top Support. Die Transkripte sind extrem hilfreich." },
-          ].map((t, i) => (
-            <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="mb-3 flex items-center gap-2 text-amber-400">
-                {[...Array(5)].map((_, i) => (<Star key={i} className="h-4 w-4 fill-current" />))}
-              </div>
-              <p className="mb-4 text-white/80">“{t.text}”</p>
-              <p className="text-sm font-medium">{t.name}</p>
-              <p className="text-xs text-white/60">{t.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+  {/* Optional Glow Effekt */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-amber-500/10 via-transparent to-pink-500/10 blur-3xl"></div>
+</section>
+
+
+
 
       {/* FAQ */}
       <section id="faq" className="mx-auto max-w-5xl px-6 py-16">
