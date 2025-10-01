@@ -77,7 +77,7 @@ export default function ConversaAI() {
               <Button variant="secondary" className="bg-white/10 text-white hover:bg-white/20 text-base px-5 py-5">
                 Live‑Demo ansehen
               </Button>
-            </div>
+            </div> 
             <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-white/60">
               <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> DSGVO‑konform</div>
               <div className="flex items-center gap-2"><Clock className="h-4 w-4" /> 24/7 Verfügbarkeit</div>
@@ -102,7 +102,7 @@ export default function ConversaAI() {
                 <div className="rounded-xl border border-white/10 bg-black/40 p-4 text-sm leading-relaxed text-white/80">
                   <p className="mb-2"><span className="text-white/60">Kunde:</span> Kann ich für 19:30 Uhr zwei Plätze reservieren?</p>
                   <p className="mb-2"><span className="text-white/60">ConversaAI:</span> Sehr gern! Name bitte?</p>
-                  <p className="mb-2"><span className="text-white/60">Kunde:</span> Yildiz.</p>
+                  <p className="mb-2"><span className="text-white/60">Kunde:</span> Mehmet</p>
                   <p className=""><span className="text-white/60">ConversaAI:</span> Perfekt, Herr/Frau Yildiz. Ich bestätige 19:30 Uhr – bis später!</p>
                 </div>
                 <div className="mt-4 text-xs text-white/60">Transkript & Details werden dir als Nachricht zugestellt.</div>
@@ -114,11 +114,29 @@ export default function ConversaAI() {
  
       <section className="mx-auto max-w-7xl px-6 pb-8">
         <div className="grid grid-cols-2 gap-6 opacity-70 sm:grid-cols-3 md:grid-cols-6">
-          {["Dolunay Döner", "Ristorante Luna", "Sushi Mono", "Kebab Haus", "Pizzeria 24", "Burger Bros"].map((brand) => (
+          {["Lavera Resto", "Mediterane Küche", "Sushi Mono", "Kebab Haus", "Pizzeria 24", "Burger Bros"].map((brand) => (
             <div key={brand} className="rounded-xl border border-white/5 bg-white/5 p-3 text-center text-xs tracking-wide">{brand}</div>
           ))}
         </div>
       </section>
+
+<section className="py-16 bg-gray-900">
+  <div className="max-w-5xl mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center text-white mb-8">
+    </h2>
+
+    <video
+      controls
+      playsInline
+      preload="metadata"
+      className="w-full h-auto rounded-2xl"
+    >
+      <source src="donervideo.mp4" type="video/mp4" />
+      Dein Browser unterstützt HTML5-Video nicht.
+    </video>
+  </div>
+</section>
+
 
 <section id="features" className="relative py-16">
     <div className="bg-white/5 ring-1 ring-white/10 backdrop-blur-md shadow-[0_10px_50px_-12px_rgba(0,0,0,0.45)] p-6 md:p-10">
@@ -131,10 +149,7 @@ export default function ConversaAI() {
       />
       {/* Logos / social proof */}
       {/* Features */}    </div>
- 
-</section>
-      
-
+ </section>
 
 
       <section id="features" className="mx-auto max-w-7xl px-6 py-16">
@@ -216,7 +231,7 @@ export default function ConversaAI() {
                   <h3 className="text-xl font-semibold text-white">ConversaAI Abo</h3>
                   <p className="text-sm text-white/70">Ideal für Restaurants, Dönerläden & Lieferdienste</p>
                 </div>
-                <Euro className="h-6 w-6" />
+              <Euro className="h-6 w-6 text-white font-bold" />
               </div>
               <div className="mb-2 text-white font-bold ">199 €<span className="text-lg font-medium text-white/70"> / Monat</span></div>
               <p className="mb-6 text-sm text-white/70">Keine Einrichtungsgebühr. Monatlich kündbar.</p>
@@ -271,9 +286,9 @@ export default function ConversaAI() {
     </div>
     <div className="grid gap-6 md:grid-cols-3">
       {[
-        { name: "Ayla K.", role: "Inhaberin – Kebab Haus", text: "Seit ConversaAI gehen keine Anrufe mehr verloren. Unsere Abläufe sind entspannter und wir haben mehr Bestellungen." },
-        { name: "Marco L.", role: "Manager – Ristorante Luna", text: "Reservierungen laufen jetzt automatisch. Das Team hat Zeit für die Gäste vor Ort." },
-        { name: "Jin S.", role: "Owner – Sushi Mono", text: "Super schnelle Einrichtung und top Support. Die Transkripte sind extrem hilfreich." },
+        { name: "Ibrahim D.", role: "Inhaberin – Lavera Resto", text: "Seit ConversaAI gehen keine Anrufe mehr verloren. Unsere Abläufe sind entspannter und wir haben mehr Bestellungen." },
+        { name: "Ahmet A.", role: "Manager – Mediterane Küche", text: "Reservierungen laufen jetzt automatisch. Das Team hat Zeit für die Gäste vor Ort." },
+        { name: "Josef", role: "Owner – Sushi Mono", text: "Super schnelle Einrichtung und top Support. Die Transkripte sind extrem hilfreich." },
       ].map((t, i) => (
         <div
           key={i}
@@ -340,7 +355,7 @@ export default function ConversaAI() {
             <div className="rounded-2xl border border-white/10 bg-black/30 p-5 text-sm text-white/80">
               <p className="mb-2 font-medium">Kontakt</p>
               <p>📞 +49 30 12345678</p>
-              <p>✉️ hello@conversa.ai</p>
+              <p>✉️ info@conversa.ai</p>
               <p className="mt-2 text-white/60">Wir melden uns innerhalb von 24 Stunden.</p>
             </div>
           </div>
@@ -378,9 +393,9 @@ export default function ConversaAI() {
           <div>
             <p className="mb-3 text-sm font-semibold">Kontakt</p>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>hello@conversa.ai</li>
+              <li>info@conversa.ai</li>
               <li>+49 30 12345678</li>
-              <li>Berlin, Deutschland</li>
+              <li>Biblis, Deutschland</li>
             </ul>
           </div>
         </div>
