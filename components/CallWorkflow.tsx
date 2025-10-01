@@ -43,7 +43,7 @@ export default function CallWorkflow({
   storeImg,
 }: Props) {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16 md:py-20">
+<section className="mx-auto max-w-6xl px-4 py-8 md:py-20 scale-[0.8] md:scale-100 transform origin-top">
       <div className="text-center mb-10">
         <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
           So läuft’s mit ConversaAI – kurz & klar
@@ -140,8 +140,8 @@ export default function CallWorkflow({
                 <Image
                   src={customerImg}
                   alt="Kunde"
-                  width={150}
-                  height={150}
+                  width={120}
+                  height={120}
                   className="h-[120px] w-[120px] md:h-[140px] md:w-[140px] object-contain"
                 />
               ) : (
@@ -183,8 +183,8 @@ export default function CallWorkflow({
                 <Image
                   src={aiImg}
                   alt="KI-Agent"
-                  width={150}
-                  height={150}
+                  width={120}
+                  height={120}
                   className="h-[120px] w-[120px] md:h-[140px] md:w-[140px] object-contain"
                 />
               ) : (
@@ -232,8 +232,8 @@ export default function CallWorkflow({
                 <Image
                   src={storeImg}
                   alt="Restaurant"
-                  width={150}
-                  height={150}
+                  width={120}
+                  height={120}
                   className="h-[120px] w-[120px] md:h-[140px] md:w-[140px] object-contain"
                 />
               ) : (
