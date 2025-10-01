@@ -138,7 +138,7 @@ export default function ConversaAI() {
 </section>
 
 
-<section id="features" className="relative py-16">
+<section id="features" className="relative py-0">
     <div className="bg-white/5 ring-1 ring-white/10 backdrop-blur-md shadow-[0_10px_50px_-12px_rgba(0,0,0,0.45)] p-6 md:p-10">
 {/* … dein bisheriger Inhalt … */}
       <CallWorkflow
